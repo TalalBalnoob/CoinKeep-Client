@@ -15,9 +15,13 @@
     "@tanstack/react-query-devtools": "^5.89.0",
     "@tanstack/react-router": "^1.131.48",
     "@tanstack/react-router-devtools": "^1.131.48",
+    "@types/axios": "^0.9.36",
+    "axios": "^1.12.2",
     "daisyui": "^5.1.13",
+    "jotai": "^2.14.0",
     "lucide-react": "^0.544.0",
     "react": "^19.1.1",
+    "react-auth-kit": "^4.0.2-alpha.11",
     "react-dom": "^19.1.1",
     "tailwindcss": "^4.1.13"
   },
