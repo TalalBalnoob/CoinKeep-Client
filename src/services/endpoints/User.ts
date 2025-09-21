@@ -1,7 +1,7 @@
-import type { UserAccount } from '../../types'
+import type { User } from '../../types'
 import api from '../api'
 
-export const getUserAccount = async () => {
-  const account = await api.get<UserAccount[]>('/User/Account/')
+export const getUser = async () => {
+  const account = await api.get<User>('/User/profile')
   return account
 }

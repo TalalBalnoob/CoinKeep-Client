@@ -1,8 +1,8 @@
 import { useQuery } from '@tanstack/react-query'
 import { createFileRoute } from '@tanstack/react-router'
-import { getUserAccount } from '../services/endpoints/User'
+import { getUser } from '../services/endpoints/User'
 import { useEffect } from 'react'
-import { Account } from '../services/Atoms'
+import { UserProfile } from '../services/Atoms'
 import { useAtom } from 'jotai'
 import BalanceCard from '../components/BalanceCard'
 
@@ -11,25 +11,25 @@ export const Route = createFileRoute('/')({
 })
 
 function Index() {
-  const [userAccount, setUserAccount] = useAtom(Account)
+  const [userProfile, setUserProfile] = useAtom(UserProfile)
 
   const { data, isSuccess } = useQuery({
-    queryKey: ['UserAccount'],
-    queryFn: getUserAccount,
+    queryKey: ['User'],
+    queryFn: getUser,
   })
 
   useEffect(() => {
-    if (isSuccess || data) setUserAccount(data.data[0])
+    if (isSuccess || data) setUserProfile(data.data)
   }, [data])
 
-  if (!userAccount) {
+  if (!userProfile) {
     return <></>
   }
 
   return (
     <div className='container mx-auto space-y-4 p-4'>
       {/* Show User Account Balance */}
-      <BalanceCard account={userAccount} />
+      <BalanceCard user={userProfile} />
       {/* transactions History */}
       {/* Total amount ber category */}
       {/* total expanse amount */}

@@ -1,4 +1,4 @@
 import { atom } from 'jotai'
-import type { UserAccount } from '../types'
+import type { User } from '../types'
 
-export const Account = atom<UserAccount | null>(null)
+export const UserProfile = atom<User | null>(null)
