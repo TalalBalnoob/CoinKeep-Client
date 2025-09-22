@@ -5,6 +5,7 @@ import { useEffect } from 'react'
 import { UserProfile } from '../services/Atoms'
 import { useAtom } from 'jotai'
 import BalanceCard from '../components/BalanceCard'
+import TransactionsFeed from '../components/transactionsFeed/TransactionFeed'
 
 export const Route = createFileRoute('/')({
   component: Index,
@@ -27,9 +28,16 @@ function Index() {
   }
 
   return (
-    <div className='container mx-auto space-y-4 p-4'>
+    <div className='container m-3 space-y-4 p-4'>
       {/* Show User Account Balance */}
-      <BalanceCard user={userProfile} />
+      <div className='flex w-full justify-between'>
+        <div className='w-fit'>
+          <BalanceCard user={userProfile} />
+        </div>
+        <div className='w-1/3'>
+          <TransactionsFeed account={userProfile.account} />
+        </div>
+      </div>
       {/* transactions History */}
       {/* Total amount ber category */}
       {/* total expanse amount */}

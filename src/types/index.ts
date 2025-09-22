@@ -17,5 +17,7 @@ export type Transaction = {
   amount: number
   note: string
   categoryId: string
+  categoryName: string
+  transactionType: 'Income' | 'Expense' | 'Adjustment'
   createdAt: string
 }
